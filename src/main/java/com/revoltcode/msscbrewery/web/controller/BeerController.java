@@ -39,10 +39,17 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, BeerDto beerDto){
+    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto){
 
         beerService.updateBeer(beerId, beerDto);
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("/{beerId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT) //spring provides support for returning a response status via annotation
+    public void deleteBeer(@PathVariable("beerId") UUID beerId){
+
+        beerService.deleteById(beerId);
     }
 }
