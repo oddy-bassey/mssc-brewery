@@ -2,6 +2,7 @@ package com.revoltcode.msscbrewery.web.controller;
 
 import com.revoltcode.msscbrewery.web.model.CustomerDto;
 import com.revoltcode.msscbrewery.web.services.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,11 @@ import java.util.UUID;
 public class CustomerController {
 
     private CustomerService customerService;
+
+    @Autowired
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @GetMapping("/{customerId}")
     public ResponseEntity<CustomerDto> getCustomer(@PathVariable  UUID customerId){
