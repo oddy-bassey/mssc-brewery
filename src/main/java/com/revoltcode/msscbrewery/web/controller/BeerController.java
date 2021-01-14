@@ -3,12 +3,10 @@ package com.revoltcode.msscbrewery.web.controller;
 import com.revoltcode.msscbrewery.web.model.BeerDto;
 import com.revoltcode.msscbrewery.web.services.BeerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -26,5 +24,17 @@ public class BeerController {
     public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerId){
 
         return new ResponseEntity<BeerDto>(beerService.getBerById(beerId), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity handlePost(@RequestBody BeerDto beerDto){
+        BeerDto beer = beerService.saveNewBeer(beerDto);
+
+        HttpHeaders header = new HttpHeaders();
+
+        //todo add hostname to url
+        header.add("location", "/api/v1/beer"+beer.getId().toString());
+
+        return new ResponseEntity(header, HttpStatus.CREATED);
     }
 }
