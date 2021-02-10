@@ -1,6 +1,6 @@
 package com.revoltcode.msscbrewery.web.services.v2;
 
-import com.revoltcode.msscbrewery.web.model.v1.BeerDtoV2;
+import com.revoltcode.msscbrewery.web.model.v2.BeerDtoV2;
 
 import java.util.UUID;
 

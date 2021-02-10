@@ -1,4 +1,4 @@
-package com.revoltcode.msscbrewery.web.model.v1;
+package com.revoltcode.msscbrewery.web.model.v2;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

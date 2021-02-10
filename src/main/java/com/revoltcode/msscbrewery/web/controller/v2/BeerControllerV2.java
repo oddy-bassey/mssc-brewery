@@ -1,6 +1,6 @@
 package com.revoltcode.msscbrewery.web.controller.v2;
 
-import com.revoltcode.msscbrewery.web.model.v1.BeerDtoV2;
+import com.revoltcode.msscbrewery.web.model.v2.BeerDtoV2;
 import com.revoltcode.msscbrewery.web.services.v2.BeerServiceV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

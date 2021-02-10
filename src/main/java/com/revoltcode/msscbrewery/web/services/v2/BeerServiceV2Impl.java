@@ -1,8 +1,7 @@
 package com.revoltcode.msscbrewery.web.services.v2;
 
-import com.revoltcode.msscbrewery.web.model.BeerDto;
-import com.revoltcode.msscbrewery.web.model.v1.BeerDtoV2;
-import com.revoltcode.msscbrewery.web.model.v1.BeerStyleEnum;
+import com.revoltcode.msscbrewery.web.model.v2.BeerDtoV2;
+import com.revoltcode.msscbrewery.web.model.v2.BeerStyleEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
