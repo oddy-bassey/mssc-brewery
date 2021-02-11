@@ -20,6 +20,7 @@ com/revoltcode/msscbrewery/web/model/CustomerDto.class
 com/revoltcode/msscbrewery/web/mappers/BeerMapper.class
 com/revoltcode/msscbrewery/web/controller/CustomerController.class
 com/revoltcode/msscbrewery/services/CustomerServiceImpl.class
+com/revoltcode/msscbrewery/web/mappers/DateMapper.class
 com/revoltcode/msscbrewery/web/mappers/CustomerMapper.class
 com/revoltcode/msscbrewery/domain/Customer.class
 com/revoltcode/msscbrewery/web/model/CustomerDto$CustomerDtoBuilder.class
