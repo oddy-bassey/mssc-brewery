@@ -2,9 +2,7 @@ package com.revoltcode.msscbrewery.web.controller;
 
 import com.revoltcode.msscbrewery.web.model.BeerDto;
 import com.revoltcode.msscbrewery.web.services.BeerService;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import lombok.val;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,12 +11,15 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.UUID;
 
-@Slf4j
-@RequiredArgsConstructor
 @RequestMapping("/api/v1/beer")
 @RestController
 public class BeerController {
     private final BeerService beerService;
+
+    @Autowired
+    public BeerController(BeerService beerService) {
+        this.beerService = beerService;
+    }
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerId){
@@ -28,11 +29,10 @@ public class BeerController {
 
     @PostMapping
     public ResponseEntity handlePost(@Valid @RequestBody BeerDto beerDto){
-        val beer = beerService.saveNewBeer(beerDto);
+        BeerDto beer = beerService.saveNewBeer(beerDto);
 
-        var header = new HttpHeaders();
+        HttpHeaders header = new HttpHeaders();
 
-        log.info("saving data!");
         //todo add hostname to url
         header.add("location", "/api/v1/beer"+beer.getId().toString());
 
