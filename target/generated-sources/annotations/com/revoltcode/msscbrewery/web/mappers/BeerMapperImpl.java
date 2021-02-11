@@ -1,17 +1,24 @@
 package com.revoltcode.msscbrewery.web.mappers;
 
 import com.revoltcode.msscbrewery.domain.Beer;
+import com.revoltcode.msscbrewery.domain.Beer.BeerBuilder;
 import com.revoltcode.msscbrewery.web.model.BeerDto;
+import com.revoltcode.msscbrewery.web.model.BeerDto.BeerDtoBuilder;
+import com.revoltcode.msscbrewery.web.model.v2.BeerStyleEnum;
 import javax.annotation.processing.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-02-11T16:23:19+0100",
+    date = "2021-02-11T21:14:06+0100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.7-ea (Debian)"
 )
 @Component
 public class BeerMapperImpl implements BeerMapper {
+
+    @Autowired
+    private DateMapper dateMapper;
 
     @Override
     public BeerDto beerToBeerDto(Beer beer) {
@@ -19,9 +26,18 @@ public class BeerMapperImpl implements BeerMapper {
             return null;
         }
 
-        BeerDto beerDto = new BeerDto();
+        BeerDtoBuilder beerDto = BeerDto.builder();
 
-        return beerDto;
+        beerDto.id( beer.getId() );
+        beerDto.beerName( beer.getBeerName() );
+        if ( beer.getBeerStyle() != null ) {
+            beerDto.beerStyle( beer.getBeerStyle().name() );
+        }
+        beerDto.upc( beer.getUpc() );
+        beerDto.createdDate( dateMapper.asOffsetDateTime( beer.getCreatedDate() ) );
+        beerDto.lastUpdatedDate( dateMapper.asOffsetDateTime( beer.getLastUpdatedDate() ) );
+
+        return beerDto.build();
     }
 
     @Override
@@ -30,8 +46,17 @@ public class BeerMapperImpl implements BeerMapper {
             return null;
         }
 
-        Beer beer = new Beer();
+        BeerBuilder beer = Beer.builder();
 
-        return beer;
+        beer.id( beerDto.getId() );
+        beer.beerName( beerDto.getBeerName() );
+        if ( beerDto.getBeerStyle() != null ) {
+            beer.beerStyle( Enum.valueOf( BeerStyleEnum.class, beerDto.getBeerStyle() ) );
+        }
+        beer.upc( beerDto.getUpc() );
+        beer.createdDate( dateMapper.asTimestamp( beerDto.getCreatedDate() ) );
+        beer.lastUpdatedDate( dateMapper.asTimestamp( beerDto.getLastUpdatedDate() ) );
+
+        return beer.build();
     }
 }

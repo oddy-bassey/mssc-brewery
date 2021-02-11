@@ -48,6 +48,13 @@
 			<version>${mapstruct.version}</version>
 		</dependency>
 
+		<!-- Adding plugin to enable mapstruct property binding -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok-mapstruct-binding</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
@@ -110,12 +117,21 @@
 							<artifactId>lombok</artifactId>
 							<version>${lombok.version}</version>
 						</path>
+
+						<!-- Add the lombok mapstruct binding in the annotation configuration -->
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok-mapstruct-binding</artifactId>
+							<version>0.1.0</version>
+						</path>
 					</annotationProcessorPaths>
 					<compilerArgs>
 						<!-- Tells mapstruct to go ahead and configure with Java's classes. -->
 						<!-- Tells mapstruct to annotate those classes with Spring component and annotation  -->
 						<!-- So it's one of the overrides for mapstruct -->
-						<compilerArg>-Amapstruct.defaultComponentModel=spring</compilerArg>
+						<compilerArg>
+							-Amapstruct.defaultComponentModel=spring
+						</compilerArg>
 					</compilerArgs>
 				</configuration>
 			</plugin>
