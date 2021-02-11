@@ -3,7 +3,7 @@ package com.revoltcode.msscbrewery.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revoltcode.msscbrewery.web.model.BeerDto;
-import com.revoltcode.msscbrewery.web.services.BeerService;
+import com.revoltcode.msscbrewery.services.BeerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,4 +1,4 @@
-package com.revoltcode.msscbrewery.web.services.v2;
+package com.revoltcode.msscbrewery.services.v2;
 
 import com.revoltcode.msscbrewery.web.model.v2.BeerDtoV2;
 import com.revoltcode.msscbrewery.web.model.v2.BeerStyleEnum;

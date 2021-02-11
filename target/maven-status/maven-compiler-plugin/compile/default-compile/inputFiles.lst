@@ -1,0 +1,17 @@
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/model/v2/BeerStyleEnum.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/controller/BeerController.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/services/CustomerService.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/services/v2/BeerServiceV2.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/MsscBreweryApplication.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/controller/CustomerController.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/model/BeerDto.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/services/BeerServiceImpl.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/controller/v2/BeerControllerV2.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/controller/MvcExceptionHandler.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/services/BeerService.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/model/v2/BeerDtoV2.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/domain/Beer.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/services/v2/BeerServiceV2Impl.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/model/CustomerDto.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/web/mappers/BeerMapper.java
+/home/revoltcode/IdeaProjects/mssc-brewery/src/main/java/com/revoltcode/msscbrewery/services/CustomerServiceImpl.java

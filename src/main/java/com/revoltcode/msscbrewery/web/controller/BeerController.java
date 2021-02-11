@@ -1,7 +1,7 @@
 package com.revoltcode.msscbrewery.web.controller;
 
 import com.revoltcode.msscbrewery.web.model.BeerDto;
-import com.revoltcode.msscbrewery.web.services.BeerService;
+import com.revoltcode.msscbrewery.services.BeerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

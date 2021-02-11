@@ -1,4 +1,4 @@
-package com.revoltcode.msscbrewery.web.services;
+package com.revoltcode.msscbrewery.services;
 
 import com.revoltcode.msscbrewery.web.model.CustomerDto;
 import lombok.extern.slf4j.Slf4j;
